@@ -1,0 +1,47 @@
+@import (inline) "../bower_components/bootstrap/dist/css/bootstrap.min.css";
+@import "../bower_components/bootstrap/less/variables";
+
+// LOADING SPINNER
+.loading {
+  position: relative;
+  text-align: center;
+}
+
+.loading::after {
+  content:'';
+  font-size: inherit;
+  padding: 0;
+  display: inline-block;
+  position: absolute;
+  width: 1em;
+  height: 1em;
+  border-right: solid 0.15em transparent;
+  border-top: solid 0.15em @brand-primary;
+  border-radius: 50%;
+  animation: spin 660ms linear infinite;
+}
+
+label.loading::after {
+  top: 0.2em;
+  right: -1.5em;
+}
+
+button.loading::after {
+  top: 6px;
+  right: 0;
+  left: 0;
+  margin: auto;
+}
+
+.loading-big.loading::after {
+  width: 100px;
+  height: 100px;
+  top: 10vh;
+  margin-left: -50px;
+  border-width: 3px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
